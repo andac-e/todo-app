@@ -1,0 +1,12 @@
+<div class="list-group" *ngIf="loading==false;else loadingInfo">
+    <a *ngFor="let user of users" class="list-group-item" routerLink="user-todos/{{user.id}}" routerLinkActive="active">{{ user.name }}</a>
+</div>
+
+<ng-template #loadingInfo>
+    <div class="text-center">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+</ng-template>
+  
