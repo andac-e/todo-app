@@ -36,4 +36,10 @@ export class TodoComponent implements OnInit {
       this.todos = data;
     });
   }
+
+  delete(id: number) {
+    this.todoService.delete(id).subscribe((data) => {
+      this.todos = this.todos.filter((t) => t.id !== id);
+    });
+  }
 }
