@@ -20,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TodoFilterPipe } from './pipes/todo-filter.pipe';
 import { UserFilterPipe } from './pipes/user-filter.pipe';
 import { TodoAddComponent } from './todo-add/todo-add.component';
+import { TodoUpdateComponent } from './todo-update/todo-update.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { TodoAddComponent } from './todo-add/todo-add.component';
     TodoFilterPipe,
     UserFilterPipe,
     TodoAddComponent,
+    TodoUpdateComponent,
   ],
   imports: [
     BrowserModule,

@@ -7,12 +7,14 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { PostComponent } from './post/post.component';
 import { TodoAddComponent } from './todo-add/todo-add.component';
 import { TodoDetailComponent } from './todo-detail/todo-detail.component';
+import { TodoUpdateComponent } from './todo-update/todo-update.component';
 import { TodoComponent } from './todo/todo.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: TodoComponent },
   { path: 'todos', component: TodoComponent },
   { path: 'todos/add', component: TodoAddComponent },
+  { path: 'todos/update/:id', component: TodoUpdateComponent },
   { path: 'todos/:id', component: TodoDetailComponent },
   { path: 'user-todos/:userId', component: TodoComponent },
   { path: 'albums', component: AlbumComponent },

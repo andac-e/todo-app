@@ -42,16 +42,9 @@ export class TodoAddComponent implements OnInit {
   add() {
     if (this.todoAddForm.valid) {
       let todoModel = Object.assign({}, this.todoAddForm.value);
-      this.todoService.add(todoModel).subscribe(
-        (response) => {
-          this.toastrService.success('Todo eklendi', 'Başarılı');
-        },
-        (responseError) => {
-          if (responseError.error.length > 0) {
-            this.toastrService.error(responseError.error, 'Doğrulama hatası');
-          }
-        }
-      );
+      this.todoService.add(todoModel).subscribe((response) => {
+        this.toastrService.success('Todo eklendi', todoModel.title);
+      });
     } else {
       this.toastrService.warning('Formunuz eksik', 'Dikkat!');
     }

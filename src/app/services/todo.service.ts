@@ -31,7 +31,11 @@ export class TodoService {
     return this.httpClient.post<Todo>(this.apiUrl, todo);
   }
 
-  delete(id:number):Observable<Todo> {
-    return this.httpClient.delete<Todo>(this.apiUrl + "/" + id)
+  update(id: number, todo: Todo): Observable<Todo> {
+    return this.httpClient.put<Todo>(this.apiUrl + '/' + id, todo);
+  }
+
+  delete(id: number): Observable<Todo> {
+    return this.httpClient.delete<Todo>(this.apiUrl + '/' + id);
   }
 }

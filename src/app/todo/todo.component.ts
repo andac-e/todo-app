@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { PagingInfo } from '../models/pagingInfo';
 import { TodoService } from '../services/todo.service';
 import { Todo } from './todo';
@@ -17,7 +18,8 @@ export class TodoComponent implements OnInit {
 
   constructor(
     private todoService: TodoService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private toastrService: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -40,6 +42,7 @@ export class TodoComponent implements OnInit {
   delete(id: number) {
     this.todoService.delete(id).subscribe((data) => {
       this.todos = this.todos.filter((t) => t.id !== id);
+      this.toastrService.success('Todo silindi', 'Başarılı');
     });
   }
 }
