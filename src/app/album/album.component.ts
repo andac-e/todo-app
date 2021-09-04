@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PagingInfo } from '../models/pagingInfo';
 import { AlbumService } from '../services/album.service';
 import { FavoriteService } from '../services/favorite.service';
 import { Album } from './album';
@@ -10,6 +11,7 @@ import { Album } from './album';
 })
 export class AlbumComponent implements OnInit {
   albums: Album[] = [];
+  pagingInfo: PagingInfo = { itemsPerPage: 10, currentPage: 1 };
 
   constructor(
     private albumService: AlbumService,

@@ -16,6 +16,10 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PostComponent } from './post/post.component';
 import { FavoritePostComponent } from './favorite-post/favorite-post.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TodoFilterPipe } from './pipes/todo-filter.pipe';
+import { UserFilterPipe } from './pipes/user-filter.pipe';
+import { TodoAddComponent } from './todo-add/todo-add.component';
 
 @NgModule({
   declarations: [
@@ -28,17 +32,22 @@ import { FavoritePostComponent } from './favorite-post/favorite-post.component';
     AlbumComponent,
     FavoriteComponent,
     PostComponent,
-    FavoritePostComponent
+    FavoritePostComponent,
+    TodoFilterPipe,
+    UserFilterPipe,
+    TodoAddComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxPaginationModule,
+    FormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot({positionClass:"toast-bottom-right"})
+    ReactiveFormsModule,
+    NgxPaginationModule,
+    ToastrModule.forRoot({ positionClass: 'toast-bottom-right' }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

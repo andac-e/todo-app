@@ -1,18 +1,25 @@
-<table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">User ID</th>
-        <th scope="col">Title</th>
-        <th scope="col">Body</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let favoritePost of favoritePosts">
-        <th scope="row">{{favoritePost.post.id}}</th>
-        <td>{{favoritePost.post.userId}}</td>
-        <td>{{favoritePost.post.title}}</td>
-        <td>{{favoritePost.post.body}}</td>
-      </tr>
-    </tbody>
-  </table>
+<table
+  class="table table-striped"
+  *ngIf="favoritePosts.length > 0; else emptyPosts"
+>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">User ID</th>
+      <th scope="col">Title</th>
+      <th scope="col">Body</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let favoritePost of favoritePosts">
+      <th scope="row">{{ favoritePost.post.id }}</th>
+      <td>{{ favoritePost.post.userId }}</td>
+      <td>{{ favoritePost.post.title }}</td>
+      <td>{{ favoritePost.post.body }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #emptyPosts>
+  <h3>Favorilerinizde post bulunmuyor.</h3>
+</ng-template>

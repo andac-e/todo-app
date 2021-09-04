@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PagingInfo } from '../models/pagingInfo';
 import { FavoritePostService } from '../services/favorite-post.service';
 import { PostService } from '../services/post.service';
 import { Post } from './post';
@@ -10,6 +11,7 @@ import { Post } from './post';
 })
 export class PostComponent implements OnInit {
   posts: Post[] = [];
+  pagingInfo: PagingInfo = { currentPage: 1, itemsPerPage: 10 };
   constructor(
     private postService: PostService,
     private favoritePostService: FavoritePostService

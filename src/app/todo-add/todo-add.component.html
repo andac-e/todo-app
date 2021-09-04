@@ -1,0 +1,22 @@
+<div class="content">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="title">Todo ekle</h5>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="todoAddForm">
+          <div class="form-group">
+            <input
+              type="text"
+              id="title"
+              class="form-control"
+              formControlName="title"
+              placeholder="Todo ismi"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

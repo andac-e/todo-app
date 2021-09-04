@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { PagingInfo } from '../models/pagingInfo';
 import { TodoService } from '../services/todo.service';
 import { Todo } from './todo';
 
@@ -11,9 +12,8 @@ import { Todo } from './todo';
 export class TodoComponent implements OnInit {
   todos: Todo[] = [];
   loading: boolean = true;
-  itemsPerPage?:number;
-  page:number=1;
-  totalItems?:number;
+  pagingInfo: PagingInfo = { currentPage: 1, itemsPerPage: 10 };
+  filterText: string = '';
 
   constructor(
     private todoService: TodoService,
@@ -24,7 +24,6 @@ export class TodoComponent implements OnInit {
     this.todoService.getTodos().subscribe((data) => {
       this.todos = data;
       this.loading = false;
-      this.totalItems = data.length;
     });
 
     this.activatedRoute.params.subscribe((params) => {
