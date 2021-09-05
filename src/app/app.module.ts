@@ -21,6 +21,9 @@ import { TodoFilterPipe } from './pipes/todo-filter.pipe';
 import { UserFilterPipe } from './pipes/user-filter.pipe';
 import { TodoAddComponent } from './todo-add/todo-add.component';
 import { TodoUpdateComponent } from './todo-update/todo-update.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { UserAddComponent } from './user-add/user-add.component';
+import { UserUpdateComponent } from './user-update/user-update.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,9 @@ import { TodoUpdateComponent } from './todo-update/todo-update.component';
     UserFilterPipe,
     TodoAddComponent,
     TodoUpdateComponent,
+    UserListComponent,
+    UserAddComponent,
+    UserUpdateComponent,
   ],
   imports: [
     BrowserModule,

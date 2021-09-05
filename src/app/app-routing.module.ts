@@ -9,6 +9,9 @@ import { TodoAddComponent } from './todo-add/todo-add.component';
 import { TodoDetailComponent } from './todo-detail/todo-detail.component';
 import { TodoUpdateComponent } from './todo-update/todo-update.component';
 import { TodoComponent } from './todo/todo.component';
+import { UserAddComponent } from './user-add/user-add.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { UserUpdateComponent } from './user-update/user-update.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: TodoComponent },
@@ -16,6 +19,9 @@ const routes: Routes = [
   { path: 'todos/add', component: TodoAddComponent },
   { path: 'todos/update/:id', component: TodoUpdateComponent },
   { path: 'todos/:id', component: TodoDetailComponent },
+  { path: 'users', component: UserListComponent },
+  { path: 'users/add', component: UserAddComponent },
+  { path: 'users/update/:id', component: UserUpdateComponent },
   { path: 'user-todos/:userId', component: TodoComponent },
   { path: 'albums', component: AlbumComponent },
   { path: 'favorites', component: FavoriteComponent },
